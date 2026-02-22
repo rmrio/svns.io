@@ -223,8 +223,121 @@
     initReveal();
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMobileMenu();
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+        closeChatWidget();
+      }
     });
+
+    initChatWidget();
+  }
+
+  // --- Chat Widget ---
+  const chatWidget = document.getElementById('chatWidget');
+  const chatToggle = document.getElementById('chatToggle');
+  const chatClose = document.getElementById('chatClose');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  let chatOpen = false;
+  let chatInitialized = false;
+
+  const WELCOME_MSG = {
+    ru: 'Здравствуйте! Я AI-ассистент svns.io. Могу рассказать об услугах, ценах и помочь с выбором. О чём хотите спросить?',
+    en: 'Hello! I\'m the svns.io AI assistant. I can tell you about our services, pricing, and help you choose. What would you like to know?'
+  };
+
+  function openChatWidget() {
+    chatOpen = true;
+    chatWidget.classList.add('open');
+    if (!chatInitialized) {
+      addChatMessage(WELCOME_MSG[currentLang] || WELCOME_MSG.ru, 'assistant');
+      chatInitialized = true;
+    }
+    setTimeout(() => chatInput.focus(), 350);
+  }
+
+  function closeChatWidget() {
+    chatOpen = false;
+    chatWidget.classList.remove('open');
+  }
+
+  function toggleChatWidget() {
+    chatOpen ? closeChatWidget() : openChatWidget();
+  }
+
+  function addChatMessage(text, role) {
+    const div = document.createElement('div');
+    div.className = `chat-msg chat-msg--${role}`;
+    div.textContent = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'chat-typing';
+    div.id = 'chatTyping';
+    div.innerHTML = '<span class="chat-typing__dot"></span><span class="chat-typing__dot"></span><span class="chat-typing__dot"></span>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function removeTyping() {
+    const el = document.getElementById('chatTyping');
+    if (el) el.remove();
+  }
+
+  async function sendChatMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    addChatMessage(text, 'user');
+    chatInput.value = '';
+    chatSend.disabled = true;
+    showTyping();
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text }),
+      });
+
+      removeTyping();
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || 'Request failed');
+      }
+
+      const data = await res.json();
+      addChatMessage(data.response, 'assistant');
+    } catch (err) {
+      removeTyping();
+      const errorText = currentLang === 'ru'
+        ? 'Произошла ошибка. Попробуйте позже или напишите в Telegram: @svns_io'
+        : 'An error occurred. Try again later or message us on Telegram: @svns_io';
+      addChatMessage(errorText, 'error');
+    }
+
+    chatSend.disabled = !chatInput.value.trim();
+    chatInput.focus();
+  }
+
+  function initChatWidget() {
+    chatToggle.addEventListener('click', toggleChatWidget);
+    chatClose.addEventListener('click', closeChatWidget);
+
+    chatInput.addEventListener('input', () => {
+      chatSend.disabled = !chatInput.value.trim();
+    });
+
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !chatSend.disabled) sendChatMessage();
+    });
+
+    chatSend.addEventListener('click', sendChatMessage);
   }
 
   if (document.readyState === 'loading') {
