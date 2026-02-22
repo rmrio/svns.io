@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>svns.io — AI для вашего бизнеса</title>
+  <meta name="description" content="Веб-разработка, внедрение AI и доступ к языковым моделям для малого бизнеса">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="svns.io">
+        <span class="logo__text">svns<span class="logo__dot">.</span>io</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="#services" class="nav__link" data-ru="Услуги" data-en="Services">Услуги</a></li>
+          <li><a href="#about" class="nav__link" data-ru="О нас" data-en="About">О нас</a></li>
+          <li><a href="#pricing" class="nav__link" data-ru="Тарифы" data-en="Pricing">Тарифы</a></li>
+          <li><a href="#faq" class="nav__link" data-ru="FAQ" data-en="FAQ">FAQ</a></li>
+          <li><a href="#contact" class="nav__link" data-ru="Контакт" data-en="Contact">Контакт</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__option" data-value="ru">RU</span>
+          <span class="lang-toggle__separator">/</span>
+          <span class="lang-toggle__option" data-value="en">EN</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <ul class="mobile-menu__list">
+        <li><a href="#services" class="mobile-menu__link" data-ru="Услуги" data-en="Services">Услуги</a></li>
+        <li><a href="#about" class="mobile-menu__link" data-ru="О нас" data-en="About">О нас</a></li>
+        <li><a href="#pricing" class="mobile-menu__link" data-ru="Тарифы" data-en="Pricing">Тарифы</a></li>
+        <li><a href="#faq" class="mobile-menu__link" data-ru="FAQ" data-en="FAQ">FAQ</a></li>
+        <li><a href="#contact" class="mobile-menu__link" data-ru="Контакт" data-en="Contact">Контакт</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__grid"></div>
+        <div class="hero__glow"></div>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__badge reveal">
+          <span class="hero__badge-dot"></span>
+          <span data-ru="Принимаем заявки" data-en="Accepting requests">Принимаем заявки</span>
+        </div>
+        <h1 class="hero__title reveal">
+          <span data-ru="Внедряем" data-en="We bring">Внедряем</span>
+          <span class="hero__title-accent" data-ru="AI" data-en="AI">AI</span><br>
+          <span data-ru="в ваш бизнес" data-en="to your business">в ваш бизнес</span>
+        </h1>
+        <p class="hero__subtitle reveal" data-ru="Разработка, интеграция языковых моделей и доступ к AI через API и веб-интерфейс. Помогаем малому бизнесу работать эффективнее." data-en="Development, language model integration, and AI access via API and web interface. Helping small businesses work smarter.">Разработка, интеграция языковых моделей и доступ к AI через API и веб-интерфейс. Помогаем малому бизнесу работать эффективнее.</p>
+        <div class="hero__actions reveal">
+          <a href="#contact" class="btn btn--primary" data-ru="Обсудить проект" data-en="Discuss a project">Обсудить проект</a>
+          <a href="#services" class="btn btn--ghost" data-ru="Наши услуги" data-en="Our services">Наши услуги</a>
+        </div>
+        <div class="hero__stats reveal">
+          <div class="hero__stat">
+            <span class="hero__stat-value">50+</span>
+            <span class="hero__stat-label" data-ru="проектов" data-en="projects">проектов</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">3<span class="hero__stat-unit" data-ru="года" data-en="years">года</span></span>
+            <span class="hero__stat-label" data-ru="на рынке" data-en="in the market">на рынке</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">24/7</span>
+            <span class="hero__stat-label" data-ru="поддержка" data-en="support">поддержка</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label" data-ru="Что мы делаем" data-en="What we do">Что мы делаем</span>
+          <h2 class="section__title" data-ru="Услуги" data-en="Services">Услуги</h2>
+        </div>
+        <div class="services__grid">
+          <article class="service-card reveal">
+            <div class="service-card__number">01</div>
+            <div class="service-card__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="24" height="18" rx="2"/>
+                <path d="M10 14l3-4 3 4"/>
+                <line x1="4" y1="26" x2="28" y2="26"/>
+                <circle cx="22" cy="11" r="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-ru="Веб-разработка" data-en="Web Development">Веб-разработка</h3>
+            <p class="service-card__text" data-ru="Создаём сайты, веб-приложения и сервисы с чистым кодом, современным дизайном и фокусом на производительность." data-en="We build websites, web applications and services with clean code, modern design and a focus on performance.">Создаём сайты, веб-приложения и сервисы с чистым кодом, современным дизайном и фокусом на производительность.</p>
+            <ul class="service-card__tags">
+              <li>HTML / CSS / JS</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>SPA / SSR</li>
+            </ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card__number">02</div>
+            <div class="service-card__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="16" cy="16" r="4"/>
+                <path d="M16 4v4M16 24v4M4 16h4M24 16h4"/>
+                <path d="M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-ru="Внедрение AI" data-en="AI Integration">Внедрение AI</h3>
+            <p class="service-card__text" data-ru="Интегрируем языковые модели в ваши бизнес-процессы: чат-боты, автоматизация, анализ данных и генерация контента." data-en="We integrate language models into your business processes: chatbots, automation, data analysis and content generation.">Интегрируем языковые модели в ваши бизнес-процессы: чат-боты, автоматизация, анализ данных и генерация контента.</p>
+            <ul class="service-card__tags">
+              <li>GPT / Claude</li>
+              <li data-ru="Чат-боты" data-en="Chatbots">Чат-боты</li>
+              <li data-ru="Автоматизация" data-en="Automation">Автоматизация</li>
+              <li>RAG</li>
+            </ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card__number">03</div>
+            <div class="service-card__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 10h16M8 16h10M8 22h14"/>
+                <rect x="4" y="4" width="24" height="24" rx="3"/>
+                <path d="M22 18l4 4-4 4"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-ru="Доступ к LLM" data-en="LLM Access">Доступ к LLM</h3>
+            <p class="service-card__text" data-ru="Предоставляем доступ к передовым языковым моделям через удобный API или готовый веб-интерфейс. Без сложной настройки." data-en="We provide access to advanced language models via a convenient API or ready-made web interface. No complex setup needed.">Предоставляем доступ к передовым языковым моделям через удобный API или готовый веб-интерфейс. Без сложной настройки.</p>
+            <ul class="service-card__tags">
+              <li>REST API</li>
+              <li data-ru="Веб-чат" data-en="Web Chat">Веб-чат</li>
+              <li>OpenAI / Anthropic</li>
+              <li data-ru="Документация" data-en="Documentation">Документация</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__content reveal">
+            <span class="section__label" data-ru="О компании" data-en="About us">О компании</span>
+            <h2 class="section__title" data-ru="Технологии с&nbsp;человеческим подходом" data-en="Technology with a&nbsp;human touch">Технологии с&nbsp;человеческим подходом</h2>
+            <p class="about__text" data-ru="svns.io — это команда разработчиков и AI-инженеров. Мы верим, что искусственный интеллект должен быть доступен каждому бизнесу, а не только корпорациям. Наша миссия — снижать порог входа в AI-технологии, создавая простые и эффективные решения." data-en="svns.io is a team of developers and AI engineers. We believe artificial intelligence should be accessible to every business, not just corporations. Our mission is to lower the barrier to AI technologies by creating simple and effective solutions.">svns.io — это команда разработчиков и AI-инженеров. Мы верим, что искусственный интеллект должен быть доступен каждому бизнесу, а не только корпорациям. Наша миссия — снижать порог входа в AI-технологии, создавая простые и эффективные решения.</p>
+          </div>
+          <div class="about__features reveal">
+            <div class="about__feature">
+              <div class="about__feature-marker"></div>
+              <div>
+                <h3 class="about__feature-title" data-ru="Без лишнего" data-en="No bloat">Без лишнего</h3>
+                <p class="about__feature-text" data-ru="Минимум зависимостей, максимум производительности. Чистый код и прозрачная архитектура." data-en="Minimal dependencies, maximum performance. Clean code and transparent architecture.">Минимум зависимостей, максимум производительности. Чистый код и прозрачная архитектура.</p>
+              </div>
+            </div>
+            <div class="about__feature">
+              <div class="about__feature-marker"></div>
+              <div>
+                <h3 class="about__feature-title" data-ru="Под ключ" data-en="Turnkey">Под ключ</h3>
+                <p class="about__feature-text" data-ru="От идеи до продакшена. Берём на себя весь цикл: проектирование, разработка, деплой, поддержка." data-en="From idea to production. We handle the full cycle: design, development, deployment, support.">От идеи до продакшена. Берём на себя весь цикл: проектирование, разработка, деплой, поддержка.</p>
+              </div>
+            </div>
+            <div class="about__feature">
+              <div class="about__feature-marker"></div>
+              <div>
+                <h3 class="about__feature-title" data-ru="Понятные цены" data-en="Transparent pricing">Понятные цены</h3>
+                <p class="about__feature-text" data-ru="Фиксированная стоимость за проект или прозрачная подписка. Никаких скрытых платежей." data-en="Fixed project cost or transparent subscription. No hidden fees.">Фиксированная стоимость за проект или прозрачная подписка. Никаких скрытых платежей.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label" data-ru="Стоимость" data-en="Pricing">Стоимость</span>
+          <h2 class="section__title" data-ru="Тарифы" data-en="Plans">Тарифы</h2>
+        </div>
+        <div class="pricing__grid">
+          <article class="pricing-card reveal">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__name" data-ru="Стартовый" data-en="Starter">Стартовый</h3>
+              <p class="pricing-card__desc" data-ru="Для тех, кто хочет попробовать AI" data-en="For those who want to try AI">Для тех, кто хочет попробовать AI</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount" data-ru="от 30 000 ₽" data-en="from $350">от 30 000 ₽</span>
+              <span class="pricing-card__period" data-ru="/ проект" data-en="/ project">/ проект</span>
+            </div>
+            <ul class="pricing-card__features">
+              <li data-ru="Лендинг или мини-сайт" data-en="Landing page or mini-site">Лендинг или мини-сайт</li>
+              <li data-ru="Базовая интеграция AI" data-en="Basic AI integration">Базовая интеграция AI</li>
+              <li data-ru="Адаптивный дизайн" data-en="Responsive design">Адаптивный дизайн</li>
+              <li data-ru="1 месяц поддержки" data-en="1 month support">1 месяц поддержки</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline" data-ru="Выбрать" data-en="Choose">Выбрать</a>
+          </article>
+          <article class="pricing-card pricing-card--featured reveal">
+            <div class="pricing-card__badge" data-ru="Популярный" data-en="Popular">Популярный</div>
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__name" data-ru="Бизнес" data-en="Business">Бизнес</h3>
+              <p class="pricing-card__desc" data-ru="Полноценное AI-решение для бизнеса" data-en="Full AI solution for business">Полноценное AI-решение для бизнеса</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount" data-ru="от 90 000 ₽" data-en="from $1 000">от 90 000 ₽</span>
+              <span class="pricing-card__period" data-ru="/ проект" data-en="/ project">/ проект</span>
+            </div>
+            <ul class="pricing-card__features">
+              <li data-ru="Веб-приложение под ключ" data-en="Turnkey web application">Веб-приложение под ключ</li>
+              <li data-ru="Кастомные AI-интеграции" data-en="Custom AI integrations">Кастомные AI-интеграции</li>
+              <li data-ru="API для языковых моделей" data-en="LLM API access">API для языковых моделей</li>
+              <li data-ru="3 месяца поддержки" data-en="3 months support">3 месяца поддержки</li>
+              <li data-ru="Приоритетная связь" data-en="Priority communication">Приоритетная связь</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary" data-ru="Выбрать" data-en="Choose">Выбрать</a>
+          </article>
+          <article class="pricing-card reveal">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__name" data-ru="Корпоративный" data-en="Enterprise">Корпоративный</h3>
+              <p class="pricing-card__desc" data-ru="Масштабные проекты и постоянное сопровождение" data-en="Large-scale projects and ongoing support">Масштабные проекты и постоянное сопровождение</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount" data-ru="Индивидуально" data-en="Custom">Индивидуально</span>
+              <span class="pricing-card__period"></span>
+            </div>
+            <ul class="pricing-card__features">
+              <li data-ru="Архитектура и разработка" data-en="Architecture and development">Архитектура и разработка</li>
+              <li data-ru="Выделенная команда" data-en="Dedicated team">Выделенная команда</li>
+              <li data-ru="SLA и гарантии" data-en="SLA and guarantees">SLA и гарантии</li>
+              <li data-ru="Обучение персонала" data-en="Staff training">Обучение персонала</li>
+              <li data-ru="Бессрочная поддержка" data-en="Unlimited support">Бессрочная поддержка</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline" data-ru="Обсудить" data-en="Discuss">Обсудить</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label" data-ru="Ответы на вопросы" data-en="Answers to questions">Ответы на вопросы</span>
+          <h2 class="section__title">FAQ</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item reveal">
+            <summary class="faq__question">
+              <span data-ru="Что такое интеграция AI и зачем она бизнесу?" data-en="What is AI integration and why does a business need it?">Что такое интеграция AI и зачем она бизнесу?</span>
+              <span class="faq__icon"></span>
+            </summary>
+            <div class="faq__answer">
+              <p data-ru="Интеграция AI — это внедрение языковых моделей и алгоритмов машинного обучения в рабочие процессы компании. Это может быть чат-бот для поддержки клиентов, автоматическая обработка заявок, анализ отзывов или генерация контента. Всё это экономит время и деньги." data-en="AI integration means incorporating language models and machine learning algorithms into company workflows. This can be a customer support chatbot, automated request processing, review analysis, or content generation. All of this saves time and money.">Интеграция AI — это внедрение языковых моделей и алгоритмов машинного обучения в рабочие процессы компании. Это может быть чат-бот для поддержки клиентов, автоматическая обработка заявок, анализ отзывов или генерация контента. Всё это экономит время и деньги.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal">
+            <summary class="faq__question">
+              <span data-ru="Какие языковые модели вы используете?" data-en="Which language models do you use?">Какие языковые модели вы используете?</span>
+              <span class="faq__icon"></span>
+            </summary>
+            <div class="faq__answer">
+              <p data-ru="Мы работаем с GPT-4o, Claude, Gemini, LLaMA и другими моделями. Выбор зависит от задачи: для генерации текста, анализа данных, кода или мультимодальных решений — мы подберём оптимальный вариант." data-en="We work with GPT-4o, Claude, Gemini, LLaMA, and other models. The choice depends on the task: for text generation, data analysis, code, or multimodal solutions — we select the optimal option.">Мы работаем с GPT-4o, Claude, Gemini, LLaMA и другими моделями. Выбор зависит от задачи: для генерации текста, анализа данных, кода или мультимодальных решений — мы подберём оптимальный вариант.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal">
+            <summary class="faq__question">
+              <span data-ru="Как работает доступ к моделям через API?" data-en="How does API access to models work?">Как работает доступ к моделям через API?</span>
+              <span class="faq__icon"></span>
+            </summary>
+            <div class="faq__answer">
+              <p data-ru="Мы предоставляем единый API-endpoint, совместимый с форматом OpenAI. Вы получаете ключ, документацию и готовые примеры. Также доступен веб-интерфейс для тех, кому не нужен API." data-en="We provide a unified API endpoint compatible with OpenAI format. You get a key, documentation, and ready-made examples. A web interface is also available for those who don't need an API.">Мы предоставляем единый API-endpoint, совместимый с форматом OpenAI. Вы получаете ключ, документацию и готовые примеры. Также доступен веб-интерфейс для тех, кому не нужен API.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal">
+            <summary class="faq__question">
+              <span data-ru="Сколько времени занимает разработка проекта?" data-en="How long does project development take?">Сколько времени занимает разработка проекта?</span>
+              <span class="faq__icon"></span>
+            </summary>
+            <div class="faq__answer">
+              <p data-ru="Лендинг — от 5 рабочих дней. Веб-приложение с AI-интеграцией — от 2 до 6 недель, в зависимости от сложности. Точные сроки обсуждаем после изучения задачи." data-en="Landing page — from 5 business days. Web application with AI integration — from 2 to 6 weeks, depending on complexity. Exact timelines are discussed after reviewing the task.">Лендинг — от 5 рабочих дней. Веб-приложение с AI-интеграцией — от 2 до 6 недель, в зависимости от сложности. Точные сроки обсуждаем после изучения задачи.</p>
+            </div>
+          </details>
+          <details class="faq__item reveal">
+            <summary class="faq__question">
+              <span data-ru="Вы работаете с клиентами за пределами России?" data-en="Do you work with clients outside of Russia?">Вы работаете с клиентами за пределами России?</span>
+              <span class="faq__icon"></span>
+            </summary>
+            <div class="faq__answer">
+              <p data-ru="Да. Мы работаем удалённо и принимаем оплату в разных валютах. Общение на русском и английском языках." data-en="Yes. We work remotely and accept payment in various currencies. Communication in Russian and English.">Да. Мы работаем удалённо и принимаем оплату в разных валютах. Общение на русском и английском языках.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <span class="section__label" data-ru="Связаться" data-en="Get in touch">Связаться</span>
+            <h2 class="section__title" data-ru="Давайте обсудим ваш&nbsp;проект" data-en="Let's discuss your&nbsp;project">Давайте обсудим ваш&nbsp;проект</h2>
+            <p class="contact__text" data-ru="Расскажите о задаче — мы предложим решение и оценим сроки. Обычно отвечаем в течение 24 часов." data-en="Tell us about your task — we'll suggest a solution and estimate timelines. We usually respond within 24 hours.">Расскажите о задаче — мы предложим решение и оценим сроки. Обычно отвечаем в течение 24 часов.</p>
+            <div class="contact__channels">
+              <a href="mailto:hello@svns.io" class="contact__channel">
+                <span class="contact__channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 4l8 6 8-6"/></svg>
+                </span>
+                hello@svns.io
+              </a>
+              <a href="https://t.me/svns_io" class="contact__channel" target="_blank" rel="noopener">
+                <span class="contact__channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2L9 11M18 2l-5 16-4-7-7-4 16-5z"/></svg>
+                </span>
+                @svns_io
+              </a>
+            </div>
+          </div>
+          <form class="contact__form reveal" id="contactForm" novalidate>
+            <div class="form__group">
+              <label class="form__label" for="name" data-ru="Имя" data-en="Name">Имя</label>
+              <input class="form__input" type="text" id="name" name="name" required data-placeholder-ru="Как к вам обращаться?" data-placeholder-en="How should we address you?" placeholder="Как к вам обращаться?">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email" data-ru="Email" data-en="Email">Email</label>
+              <input class="form__input" type="email" id="email" name="email" required data-placeholder-ru="your@email.com" data-placeholder-en="your@email.com" placeholder="your@email.com">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="message" data-ru="Сообщение" data-en="Message">Сообщение</label>
+              <textarea class="form__input form__textarea" id="message" name="message" rows="4" required data-placeholder-ru="Расскажите о вашем проекте или задаче…" data-placeholder-en="Tell us about your project or task…" placeholder="Расскажите о вашем проекте или задаче…"></textarea>
+            </div>
+            <button class="btn btn--primary btn--full" type="submit" data-ru="Отправить заявку" data-en="Send request">Отправить заявку</button>
+            <div class="form__status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo logo--small">
+          <span class="logo__text">svns<span class="logo__dot">.</span>io</span>
+        </span>
+        <p class="footer__copy">&copy; 2026 svns.io</p>
+      </div>
+      <div class="footer__links">
+        <a href="#services" class="footer__link" data-ru="Услуги" data-en="Services">Услуги</a>
+        <a href="#pricing" class="footer__link" data-ru="Тарифы" data-en="Pricing">Тарифы</a>
+        <a href="#faq" class="footer__link">FAQ</a>
+        <a href="#contact" class="footer__link" data-ru="Контакт" data-en="Contact">Контакт</a>
+      </div>
+      <div class="footer__tagline">
+        <code class="footer__code" data-ru="// сделано с ❤️ и AI" data-en="// made with ❤️ and AI">// сделано с ❤️ и AI</code>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
