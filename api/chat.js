@@ -84,9 +84,11 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json();
-    const text = data?.content?.[0]?.text;
+    const textBlock = data?.content?.find(c => c.type === 'text');
+    const text = textBlock?.text;
 
     if (!text) {
+      console.error('Unexpected response structure:', JSON.stringify(data));
       return res.status(502).json({ error: 'Empty response from AI' });
     }
 
